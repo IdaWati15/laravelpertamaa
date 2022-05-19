@@ -1,53 +1,43 @@
-@extends('layouts.dashboard')
+@extends('layouts.app')
 
 @section('title', 'Groups')
 
 @section('content')
+<h3>GROUPS</h3>
+<HR></HR>
+<a href="/groups/create" class="btn btn-primary mb-2">Tambah Groups</a>
+@foreach ($groups as $group)
 
-    <a href="/groups/create" class="btn btn-primary  mb-3">Tambah group</a>
-    <div class="row">
-        @foreach ($groups as $group)
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <a style="text-decoration:none" href="/groups/{{ $group['id'] }}"
-                            class="card-title">{{ $group['name'] }}</a>
-                        <p class="card-text">{{ $group['description'] }}</p>
-                        <hr>
-                        <a href="/groups/addmember/{{ $group['id'] }}" class="btn btn-primary mb-3">Tambah Anggota Teman</a>
-                        <ul class="list-group">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <a href="/groups/{{ $group['id']}}"class="card-title">{{ $group['name'] }}</a>
+    <p class="card-text">{{ $group['description'] }}</p>
+  <hr>
+  <a href="/groups/create" class="btn btn-primary mb-2">Tambah Anggota</a>
 
-                            @forelse ($group->friends as $id => $friend)
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    {{$id+1}} .
-                                    {{ $friend->nama }}
-                                    <form action="/groups/deleteaddmember/{{ $friend->id }}" method="POST">
-                                        @csrf
-                                        @method('PUT')
-                                        <button type="submit" class="btn btn-danger">x</button>
-                                    </form>
-                                </li>
-                            @empty
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    Anggota kosong
-                                </li>
-                            @endforelse
-                        </ul>
-                        <hr>
-                        <a style="text-decoration:none" href="/groups/{{ $group['id'] }}/edit"
-                            class="btn btn-warning">Edit
-                            group</a>
-                        <form action="/groups/{{ $group['id'] }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="card-link btn btn-danger">Delete group</a>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-        <div>
-            <div>
-                {{ $groups->links() }}
-            </div>
-        @endsection
+@foreach ($group->friends as $friend)
+<li> {{$friend->nama}} </li>
+@endforeach
+
+
+
+  <hr>
+
+
+
+
+    <a href="/groups/{{ $group['id'] }}/edit" class="btn btn-warning mb-2">Edit Groups</a>
+    <form action="/groups/{{$group['id']}}" method="POST">
+      @csrf
+      @method('DELETE')
+      <button class="btn btn-danger">Delete Groups</button>
+    </form>
+  </div>
+</div>
+
+@endforeach
+
+<div>
+{{$groups-> links() }}
+</div>
+@endsection

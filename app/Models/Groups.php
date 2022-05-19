@@ -10,8 +10,9 @@ class Groups extends Model
     use HasFactory;
 
     protected $guarded = ['name'];
+
     public function friends()
-    {
-        return $this->hasMany('App\Models\Friends');
-    }
+{
+	return $this->hasMany('App\Models\Friends');
+}
 }

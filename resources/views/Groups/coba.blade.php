@@ -1,7 +1,9 @@
-@extends('layouts.dashboard')
+@extends('layout.app')
 
 @section('title', 'Coba')
 
 @section('content')
-    Urutan Ke - {{ $ke }}
+Urutan ke - {{$ke}}
+
 @endsection
+

@@ -11,27 +11,28 @@
     <title>@yield('title')</title>
   </head>
   <body>
-      <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Laravel Pertama</a>
+    <a class="navbar-brand" href="#"><h3><b>Laravel Pertama</h3></b></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="/">Home</a>
-        <a class="nav-link" href="/friends">Friends</a>
-        <a class="nav-link" href="/groups">Groups</a>    
+        <a class="nav-link active" aria-current="page" href="/"><b>Home</b></a>
+        <a class="nav-link active" href="/friends"><b>Friends</b></a>
+        <a class="nav-link active" href="/groups"><b>Groups</b></a>
+      </div>
     </div>
   </div>
 </nav>
 
-     @yield('content')
+  @yield('content') 
+
 
 
 </div>
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
