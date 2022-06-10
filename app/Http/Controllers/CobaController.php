@@ -15,7 +15,7 @@ class CobaController extends Controller
     public function urutan($ke)
     {
         $friends = Friends::paginate(3);
-            return view ('friend', compact('friends'));
+            return view ('friends', compact('friends'));
     }
     public function coba($ke)
     {
@@ -26,7 +26,7 @@ class CobaController extends Controller
 
     public function index ()
     {
-        $friends = Friends::orderBy('id', 'desc')->paginate(3);
+        $friends = friends::orderBy('id', 'desc')->paginate(3);
         return view ('friends.index', compact('friends'));
     }
 

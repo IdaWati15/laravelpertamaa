@@ -5,8 +5,8 @@
 @section('content')
 <div class="card mb-2">
     <div class= "card-body">
-        <h3>Name : {{$group['name']}}</h3>
-        <h3>Description : {{$group['description']}}</h3>
+        <h3>Name : {{$groups['name']}}</h3>
+        <h3>Description : {{$groups['description']}}</h3>
     </div>
 </div>
 
