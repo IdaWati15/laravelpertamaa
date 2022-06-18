@@ -3,8 +3,6 @@
 @section('title','Friends')
 
 @section('content')
-<h3>FRIENDS</h3>
-<HR></HR>
 <a href="/friends/create" class="btn btn-primary mb-2">Tambah Teman</a>
 @foreach($friends as $friend)
 <div class="card mb-2" style="width: 18rem;">
@@ -20,8 +18,9 @@
     <button class="btn btn-danger">Delete Teman</button>
     </form>
   </div>
-  @endforeach
 </div>
+  @endforeach
+</div>    
 
 <div>
   {{ $friends->links() }}

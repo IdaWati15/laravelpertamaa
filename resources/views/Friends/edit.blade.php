@@ -16,8 +16,8 @@
       </div>
       <div class="mb-3">
         <label for="no_telp" class="form-label">No Telp</label>
-        <input type="text" class="form-control" id="no_telp" name="no_telp" value="{{ old('no_telp') ? old('no_telp') : $friend['no_telp'] }}">
-        @error('no_telp')
+        <input type="text" class="form-control" id="no_tlp" name="no_tlp" value="{{ old('no_tlp') ? old('no_tlp') : $friend['no_tlp'] }}">
+        @error('no_tlp')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
       </div>

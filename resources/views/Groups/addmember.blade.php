@@ -1,7 +1,6 @@
 @extends('layouts\app')
 
 @section('title','Groups')
-
 @section('content')
 <h3>Input Data Anggota</h3>
 <form action="/groups/addmember/{{ $group->id }}" method="POST">

@@ -2,7 +2,6 @@
 @section('title','Groups')
 @section('content')
 <a href="/groups/create" class="btn btn-primary mb-2">Tambah Group</a>
-
 @foreach($groups as $group)
 <div class="card" style="width: 18rem;">
   <div class="card-body">
